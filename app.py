@@ -2,7 +2,6 @@ import streamlit as st
 from dotenv import load_dotenv
 from google.generativeai import GenerativeModel
 import google.generativeai as genai
-from google.cloud import texttospeech
 import os
 
 ##Function to load the model and get the response
