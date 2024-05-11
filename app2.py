@@ -41,10 +41,6 @@ def main():
         
         ##initialize our streamlit app
         st.set_page_config(page_title="Advanced Artificial Intelligence Brain",page_icon="Kisan-Mitra.png")
-        st.subheader("किसान मित्र चैटबॉट")
-        st.caption("Developer: Ramendra Singh Rajput")
-        prompt=st.chat_input("Enter Your Question Here")
-        lang = st.radio("Select Language:", ("Hindi","English"))
         with st.sidebar:
          st.write("प्रिय किसान बंधु,") 
          st.write("    मै आपकी किसानी से संबन्धित किसी भी प्रकार की मदद के लिए अग्रसर एक भाषा मॉडल हू जिसे आर्टिफ़िश्यल इंटेलिजेंस की मशीन लर्निंग पद्धति से बनाया गया है। आप यहा मुझे अपनी समस्या से अवगत कराएं। मै आपके हर सवाल का जवाब देने की पूरी कोशिश करुगा। मेरे निर्माता द्वारा मुझे निरंतर नयी जानकारियों से प्रशिक्षित किया जा रहा है। आपसे हुये संवाद से मै निरंतर सीखता जाता हू।")
@@ -52,7 +48,12 @@ def main():
          st.write("अपनी पूछताछ साझा करने में संकोच न करें। मैं आपकी कृषि संबंधी चिंताओं को दूर करने में मदद करने के लिए यहां हूं।")
          st.write("    कृपया ध्यान दें कि मैं एक कृत्रिम बुद्धिमत्ता (एआई) द्वारा संचालित चैटबॉट हूं और आपके व्यक्तिगत डेटा तक पहुंच या संग्रह करने में सक्षम नहीं हूं।")
          st.write("निर्माता के बारे मे अधिक जानकारी के लिए आप निर्माता संबंधी प्रश्न कर सकते है।")
-         st.write("धन्यवाद!")        
+         st.write("धन्यवाद!")
+        st.subheader("किसान मित्र चैटबॉट")
+        st.caption("Developer: Ramendra Singh Rajput")
+        prompt=st.chat_input("Enter Your Question Here")
+        lang = st.radio("Select Language:", ("Hindi","English"))
+                
          
         if prompt:
          Kisan_mitra(lang,prompt)
