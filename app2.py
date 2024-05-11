@@ -40,7 +40,7 @@ def main():
         genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
         
         ##initialize our streamlit app
-        st.set_page_config(page_title="Advanced Artificial Intelligence Brain",page_icon="kisan-mitra.png")
+        st.set_page_config(page_title="Advanced Artificial Intelligence Brain",page_icon="Kisan-Mitra.png")
         st.subheader("किसान मित्र चैटबॉट")
         st.caption("Developer: Ramendra Singh Rajput")
         prompt=st.chat_input("Enter Your Question Here")
