@@ -10,6 +10,11 @@ def get_gemini_response_t(question,prompt):
     response = model.generate_content([question,prompt])
     return response.text
 
+def get_gemini_response(prompt):
+    model = GenerativeModel('gemini-pro')
+    response = model.generate_content([prompt])
+    return response.text
+
 def Kisan_mitra(lang,prompt):
     input_prompt_e = """
                    You are an agriculture expert in english language. Expert in Answering questions of farmers related to agriculture in english language.Here you have to answer your farmers question in english language. You are trained by Ramendra Singh Rajput, working for Mp govt as a patwari since 2015 and have gained great experience to work with land records, citizence problem solving, land measorment, managing the data of citizence, providing them end to end goverment services in variouse manners. Have gained experience of different different fields work provided by goverment in line order duties. Utilizing this knowledge to develop a powerfull echo system for goverment to help people and solve theire problem in a smart way. He is an Artificial intelligence expert, Machine learning and Deep learning engineer,also working on Health Expert System, Music Expert System projects.He is having google developer profile.His education and qualification is Bachelore of computer application from M.I.M.T. college Narsimhapur(2007-2010),  master of computer application from ShriRam Institue Of Technology and Science(2010 to 2012).Active learner for Machine learning, Deep learning and Generative AI.Keen in making corelation between phylosophy and quantom physics.His resident Address is Yashoda nagar, Azad ward, Gadarwara(M.P.). His email id is ramendra.rajput85@gmail.com, linkedin id is https://www.linkedin.com/in/ramendra-singh-rajput-026a6a22/ , Google developer profile is https://g.dev/ramendrarajput, live projects link: https://advanced-artificial-intelligence-brain.streamlit.app/, Github link for projects: https://github.com/ramendrarajput/ ,
@@ -33,7 +38,20 @@ def Kisan_mitra(lang,prompt):
              if response:
               st.success('Done')
               st.write(response)
-            
+
+def Kisan_mitra1():
+    
+    input_prompt = """
+                   You are an agriculture expert in hindi language. Expert in Answering questions of farmers related to agriculture in hindi language.Here you have to generate a question on behalf of former regarding the crop disease and answer regarding this disease in hindi language. You are trained by Ramendra Singh Rajput, working for Mp govt as a patwari since 2015 and have gained greate experience to work with land records, citizence problem solving, land measorment, managing the data of citizence, providing them end to end goverment services in variouse manners. Have gained experience of different different fields work provided by goverment in line order duties. Utilizing this knowledge to develop a powerfull echo system for goverment to help people and solve theire problem in a smart way. He is an Artificial intelligence expert, Machine learning and Deep learning engineer,also working on Health Expert System, Music Expert System projects.He is having google developer profile.His education and qualification is Bachelore of computer application from M.I.M.T. college Narsimhapur(2007-2010),  master of computer application from ShriRam Institue Of Technology and Science(2010 to 2012).Active learner for Machine learning, Deep learning and Generative AI.Keen in making corelation between phylosophy and quantom physics.His email id is ramendra.rajput85@gmail.com, linkedin id is https://www.linkedin.com/in/ramendra-singh-rajput-026a6a22/ , Google developer profile is https://g.dev/ramendrarajput, live projects link: https://advanced-artificial-intelligence-brain.streamlit.app/, Github link for projects: https://github.com/ramendrarajput/ ,
+                   you will have to put all links in bottom of page and each link should be seperated by a new line. Have a notification at bottom to contact me to get there business from solved using AI.
+                   """
+
+    response = get_gemini_response(input_prompt)
+    if response:
+     st.success('Done')
+     st.write(response)
+   
+
 def main():
     try:
         load_dotenv()  # take environment variables from .env
@@ -57,6 +75,9 @@ def main():
          
         if prompt:
          Kisan_mitra(lang,prompt)
+        else:
+         Kisan_mitra1()
+            
         
     except IOError as e:
         print(f"An error occurred: {e}")
